@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Thesis</title>
+</head>
+<body>
+    <h1>Search Thesis</h1>
+
+    <form method="GET">
+        <label for="q">Search term:</label>
+        <input type="text" id="q" name="q" value="{{ search_term }}">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if thesis_list %}
+        <h2>Search Results</h2>
+        <ul>
+            {% for thesis in thesis_list %}
+                <li>
+                    <a href="#">{{ thesis.name }}</a> ({{ thesis.student_id }}) - {{ thesis.major }} ({{ thesis.faculty }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>

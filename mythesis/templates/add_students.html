@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITHESIS: เพิ่มนักศึกษา</title>
+</head>
+<body>
+    <h1>ITHESIS: เพิ่มนักศึกษา</h1>
+
+    <form method="POST" action="{% url 'add_student' %}">  <!-- แก้ action เป็น 'add_student' -->
+        {% csrf_token %}
+        <label for="name">ชื่อ:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="student_id">รหัสนักศึกษา:</label>
+        <input type="text" id="student_id" name="student_id" required><br>
+
+        <label for="email">อีเมล:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="major">สาขา:</label>
+        <input type="text" id="major" name="major" required><br>
+
+        <label for="faculty">คณะ:</label>
+        <input type="text" id="faculty" name="faculty" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p><a href="{% url 'students_list' %}">กลับสู่รายชื่อนักศึกษา</a></p>
+</body>
+</html>

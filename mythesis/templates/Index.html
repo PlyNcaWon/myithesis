@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITHESIS: หน้าหลัก</title>
+</head>
+<body>
+    <h1>ITHESIS: ระบบจัดการข้อมูลนักศึกษา</h1>
+    <a href="{% url 'students_list' %}">รายชื่อนักศึกษา</a>
+    <a href="{% url 'upload_thesis' %}">อัปโหลดเอกสารวิทยานิพนธ์</a>
+    <a href="{% url 'search_thesis' %}">ค้นหาวิทยานิพนธ์</a>
+    <a href="{% url 'add_student' %}">เพิ่มนักศึกษา</a>
+    <a href="{% url 'edit_student' %}">แก้ไขข้อมูลนักศึกษา</a>
+    <!-- ลิงก์ไปยังหน้าอื่นๆ ที่คุณต้องการ -->
+</body>
+</html>

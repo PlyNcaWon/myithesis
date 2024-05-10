@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITHESIS: แก้ไขข้อมูลนักศึกษา</title>
+</head>
+<body>
+    <h1>ITHESIS: แก้ไขข้อมูลนักศึกษา</h1>
+
+    <form method="POST" action="{% url 'edit_student' student.id %}">
+        {% csrf_token %}
+        <label for="name">ชื่อ:</label>
+        <input type="text" id="name" name="name" value="{{ mystudent.name }}" required><br>
+
+        <label for="student_id">รหัสนักศึกษา:</label>
+        <input type="text" id="student_id" name="student_id" value="{{ mystudent.student_id }}" required><br>
+
+        <label for="email">อีเมล:</label>
+        <input type="email" id="email" name="email" value="{{ mystudent.email }}" required><br>
+
+        <label for="major">สาขา:</label>
+        <input type="text" id="major" name="major" value="{{ mystudent.major }}" required><br>
+
+        <label for="faculty">คณะ:</label>
+        <input type="text" id="faculty" name="faculty" value="{{ mystudent.faculty }}" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p><a href="{% url 'students_list' %}">กลับสู่รายชื่อนักศึกษา</a></p>
+</body>
+</html>
